@@ -5,6 +5,8 @@ import UnitInterface from './interfaces/UnitInterface';
 import { getUnits } from './services/UnitsService';
 import Tab from './components/Tab';
 import LoginForm from './components/LoginForm';
+import Pane from './components/Pane';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -24,9 +26,14 @@ function App() {
             <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isAdminMode={isAdminMode} setIsAdminMode={setIsAdminMode} />
             <div className='App-body container'>
                 {isLoggedIn ?
-                <ul className="nav nav-tabs">
-                    {units.map(unit => <Tab key={unit.name} unit={unit} activeTab={activeTab} setActiveTab={setActiveTab} />)}
-                </ul>
+                <>
+                    <ul className="nav nav-tabs">
+                        {units.map(unit => <Tab key={`unit-tab-${unit.id}`} unit={unit} activeTab={activeTab} setActiveTab={setActiveTab} />)}
+                    </ul>
+                    <div className='tab-content'>
+                        {units.map(unit => <Pane key={`unit-pane-${unit.id}`} unit={unit} activeTab={activeTab} setActiveTab={setActiveTab} />)}
+                    </div>
+                </>
                 :
                 <LoginForm setIsLoggedIn={setIsLoggedIn} />
                 }

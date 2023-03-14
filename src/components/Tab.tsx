@@ -15,8 +15,9 @@ function Tab({unit, activeTab, setActiveTab}: TabProps) {
     };
 
     return (
-        <li className="nav-item">
-            <button className={unit.id == activeTab ? "nav-link active" : "nav-link"} onClick={handleTabClick}>{unit.name}</button>
+        <li className="nav-item" role='presentation'>
+            <button className={unit.id == activeTab ? "nav-link active" : "nav-link"} id={`unit-tab-${unit.id}`} data-bs-toggle="tab"
+				data-bs-target={`#unit-tab-${unit.id}`} type="button" role="tab" >{unit.name}</button>
         </li>
     );
 };

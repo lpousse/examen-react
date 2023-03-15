@@ -5,6 +5,7 @@ Je me suis un peu amusé avec le projet et j'ai décidé de revisiter le thème 
 ## Lancement
 
 `npm start` pour démarrer le projet react
+
 `npm run json-server` pour démarrer le json-server. Il se lance sur le port 4000
 
 ## Merci pour la formation !

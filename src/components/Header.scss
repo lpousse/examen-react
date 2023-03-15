@@ -1,5 +1,4 @@
 .App-header {
-	background-color: lightgrey;
 	height: 150px;
 	font-size: calc(10px + 2vmin);
 	color: black;
@@ -9,7 +8,3 @@
 	height: 10vmin;
 	pointer-events: none;
   }
-
-  .App-menu {
-	background-color: darken($color: darkblue, $amount: 20);
- }

@@ -1,4 +1,7 @@
-//$warning: green;
+$primary: darken($color: darkblue, $amount: 20);
+$secondary: lightgrey;
+$warning: #FFA900;
+$danger: #FF3411;
 @import "~bootstrap/scss/bootstrap";
 
 body {

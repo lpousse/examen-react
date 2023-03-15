@@ -1,69 +1,83 @@
 {
-	"users": [
-		{
-			"id": 1,
-			"username": "admin",
-			"password": "adminadmin"
-		},
-		{
-			"id": 2,
-			"username": "lucas.pousse",
-			"password": "supershadow"
-		}
-	],
-	"units": [
-		{
-			"id": 1,
-			"name": "RX78-2 Gundam"
-		},
-		{
-			"id": 2,
-			"name": "RGZ-91 Re-GZ "
-		},
-		{
-			"id": 3,
-			"name": "RX-93 Nu Gundam"
-		}
-	],
-	"states": [
-		{
-			"id":1,
-			"name": "To do"
-		},
-		{
-			"id":2,
-			"name": "In progress"
-		},
-		{
-			"id":3,
-			"name": "Done"
-		},
-		{
-			"id":4,
-			"name": "Problem"
-		}
-	],
-	"tasks": [
-		{
-			"id": 1,
-			"title": "Fin funnels maintenance",
-			"comment": "",
-			"unitId": 3,
-			"stateId": 1
-		},
-		{
-			"id": 2,
-			"title": "Refill beam saber E-cap",
-			"comment": "E-cap durability reaching its end. Needs to be changed after next operation",
-			"unitId": 3,
-			"stateId": 3
-		},
-		{
-			"id": 3,
-			"title": "Repair ankle suspension",
-			"comment": "",
-			"unitId": 1,
-			"stateId": 2
-		}
-	]
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "adminadmin"
+    },
+    {
+      "id": 2,
+      "username": "lp",
+      "password": "lp"
+    }
+  ],
+  "units": [
+    {
+      "id": 1,
+      "name": "RX78-2 Gundam"
+    },
+    {
+      "id": 2,
+      "name": "RGZ-91 Re-GZ "
+    },
+    {
+      "id": 3,
+      "name": "RX-93 Nu Gundam"
+    }
+  ],
+  "states": [
+    {
+      "id": 1,
+      "name": "To do"
+    },
+    {
+      "id": 2,
+      "name": "In progress"
+    },
+    {
+      "id": 3,
+      "name": "Done"
+    },
+    {
+      "id": 4,
+      "name": "Problem"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Fin funnels maintenance",
+      "comment": "",
+      "unitId": 3,
+      "stateId": 1
+    },
+    {
+      "id": 2,
+      "title": "Refill beam saber E-cap",
+      "comment": "E-cap durability reaching its end. Needs to be changed after next operation",
+      "unitId": 3,
+      "stateId": 3
+    },
+    {
+      "id": 3,
+      "title": "Repair ankle suspension",
+      "comment": "",
+      "unitId": 1,
+      "stateId": 2
+    },
+    {
+      "title": "Psycho-frame revision",
+      "comment": "",
+      "unitId": 3,
+      "stateId": 2,
+      "id": 4
+    },
+    {
+      "title": "Balance",
+      "comment": "Having all fin funnel on the left side of the MS cause balance problems, especially under gravity",
+      "unitId": 3,
+      "stateId": 4,
+      "id": 5
+    }
+  ]
 }

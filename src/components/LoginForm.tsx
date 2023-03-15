@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import { login } from '../services/AuthService';
-import './LoginForm.scss';
 
 type LoginFormProps = {
 	setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+type LoginFormData = {
+	username: {value: string},
+	password: {value: string}
+};
+
 function LoginForm({setIsLoggedIn}: LoginFormProps) {
 
 	const [loginError, setLoginError] = useState(false);
-	const handleSubmitLogin = (event: any/*React.FormEvent<HTMLFormElement>*/) => {
+	const handleSubmitLogin = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
+		const {username, password} = event.target as typeof event.target & LoginFormData;
 		(async() => {
-            const user = await login(event.target.username.value, event.target.password.value);
+            const user = await login(username.value, password.value);
 			console.log(user);
 			if (user){
 				setIsLoggedIn(true);
@@ -20,6 +25,7 @@ function LoginForm({setIsLoggedIn}: LoginFormProps) {
 			}
 			else
 				setLoginError(true);
+			event.currentTarget.reset();
         })();
     };
 

@@ -4,35 +4,31 @@ const endpoint = "http://localhost:4000/units";
 
 export function getUnits() : Promise<UnitInterface[]> {
 	return fetch(endpoint)
-		.then(response => {
-			console.log(`response status`, response.status);
-			return response.json();
-		})
-		.catch(error => console.log("UnitService error: ", error));
+		.then(response => response.json())
+		.catch(error => console.log("UnitsService error: ", error));
 }
 
 export function getUnitById(id: number) : Promise<UnitInterface> {
 	return fetch(`${endpoint}/${id}`)
-		.then(response => {
-			console.log(`response status`, response.status);
-			return response.json();
-		})
-		.catch(error => console.log("UnitService error: ", error));
+		.then(response => response.json())
+		.then(data => data[0])
+		.catch(error => console.log("UnitsService error: ", error));
 }
 
-export function addUnit(unit: UnitInterface) {
+export function addUnit(name: string) : Promise<UnitInterface> {
 	return fetch(endpoint, {
 			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
 			},
 			method: "POST",
-			body: JSON.stringify({name: unit.name})
+			body: JSON.stringify({name: name})
 		})
-		.catch(error => console.log("UnitService error: ", error));
+		.then(response => response.json())
+		.catch(error => console.log("UnitsService error: ", error));
 }
 
-export function updateUnit(unit: UnitInterface) {
+export function updateUnit(unit: UnitInterface) : Promise<UnitInterface> {
 	return fetch(`${endpoint}/${unit.id}`, {
 		method: "PUT",
 		headers: {
@@ -41,12 +37,13 @@ export function updateUnit(unit: UnitInterface) {
 		},
 		body: JSON.stringify(unit)
 		})
-		.catch(error => console.log("Error: ", error));
+		.then(response => response.json())
+		.catch(error => console.log("UnitsService error: ", error));
 }
 
 export function deleteUnit(id:number) {
 	return fetch(`${endpoint}/${id}`, {
 			method: "DELETE",
 		})
-		.catch(error => console.log("Error: ", error));
+		.catch(error => console.log("UnitsService error: ", error));
 }

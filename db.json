@@ -14,7 +14,7 @@
   "units": [
     {
       "id": 1,
-      "name": "RX78-2 Gundam"
+      "name": "RX-78-2 Gundam"
     },
     {
       "id": 2,
@@ -78,6 +78,27 @@
       "unitId": 3,
       "stateId": 4,
       "id": 5
+    },
+    {
+      "title": "Joint too stiff",
+      "comment": "With Amuro's piloting skills increasing, the Gundam cannot follow him anymore. It needs improvements, especially in the joints in order to keep up with Amuro",
+      "unitId": 1,
+      "stateId": 4,
+      "id": 6
+    },
+    {
+      "title": "Demonstrate performance before entering mass-production",
+      "comment": "",
+      "unitId": 2,
+      "stateId": 1,
+      "id": 7
+    },
+    {
+      "title": "Fit new Bazooka",
+      "comment": "Previous one was destroyed in last sortie",
+      "unitId": 3,
+      "stateId": 1,
+      "id": 8
     }
   ]
 }

@@ -29,8 +29,8 @@ function UnitTab({unit, setUnits, states, isAdminMode, setActiveTab}: UnitTabPro
 			: <></>
 			}
 			<div className='row'>
-				{states.map((state, index) => 
-					<div className='col-3'>
+				{states.map((state) => 
+					<div key={`unitTab-${state.name}`} className='col-3'>
 						<Card>
 							<Card.Body>
 								<Card.Title>
@@ -39,9 +39,7 @@ function UnitTab({unit, setUnits, states, isAdminMode, setActiveTab}: UnitTabPro
 										<AddTaskModal unit={unit} state={state} setTasks={setTasks} />
 									</div>
 								</Card.Title>
-								<Card.Text>
-									{tasks.filter(task => task.stateId === state.id).map(task => <TaskCard task={task} setTasks={setTasks} isAdminMode={isAdminMode} states={states} />)}
-								</Card.Text>
+								{tasks.filter(task => task.stateId === state.id).map(task => <TaskCard key={`taskCard-${task.id}`} task={task} setTasks={setTasks} isAdminMode={isAdminMode} states={states} />)}
 							</Card.Body>
 						</Card>
 					</div>	

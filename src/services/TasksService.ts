@@ -16,7 +16,7 @@ export function getTaskById(id: number) : Promise<TaskInterface> {
 }
 
 export function getTasksByUnitId(unitId: number) : Promise<TaskInterface[]> {
-	return fetch(`${endpoint}/?unitId=${unitId}`)
+	return fetch(`${endpoint}?unitId=${unitId}`)
 		.then(response => response.json())
 		.catch(error => console.log("TasksService error: ", error));
 }

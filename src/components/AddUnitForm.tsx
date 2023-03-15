@@ -35,22 +35,24 @@ function AddUnitForm({setUnits, setActiveTab}: AddUnitFormProps) {
     };
 
     return (
-		<div className='row mt-3'>
-			<form onSubmit={handleSubmitAddUnit}>
-				<div className='row mb-3'>
-					<label htmlFor='unitName' className='col-sm-2 col-form-label'>Unit name</label>
-					<div className='col-sm-10'>
-						<input type='text' className='form-control' id='unitName' name='unitName' />
+		<div className='container'>
+			<div className='row mt-3'>
+				<form onSubmit={handleSubmitAddUnit}>
+					<div className='row mb-3'>
+						<label htmlFor='unitName' className='col-sm-2 col-form-label'>Unit name</label>
+						<div className='col-sm-10'>
+							<input type='text' className='form-control' id='unitName' name='unitName' />
+						</div>
 					</div>
-				</div>
-				{addUnitError !== "" ?
-					<div className='row'>
-						<p className='text-danger'>{addUnitError}</p>
-					</div>
-					: <></>
-				}
-				<button type='submit' className='btn btn-primary'>Submit</button>
-			</form>
+					{addUnitError !== "" ?
+						<div className='row'>
+							<p className='text-danger'>{addUnitError}</p>
+						</div>
+						: <></>
+					}
+					<button type='submit' className='btn btn-primary'>Submit</button>
+				</form>
+			</div>
 		</div>
     );
 };

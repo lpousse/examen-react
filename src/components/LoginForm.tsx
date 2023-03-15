@@ -18,39 +18,40 @@ function LoginForm({setIsLoggedIn}: LoginFormProps) {
 		const {username, password} = event.target as typeof event.target & LoginFormData;
 		(async() => {
             const user = await login(username.value, password.value);
-			console.log(user);
 			if (user){
 				setIsLoggedIn(true);
 				setLoginError(false);
 			}
 			else
 				setLoginError(true);
-			event.currentTarget.reset();
         })();
+		event.currentTarget.reset();
     };
 
     return (
-        <form onSubmit={handleSubmitLogin}>
-			<div className='row mb-3'>
-				<label htmlFor='username' className='col-sm-2 col-form-label'>Username</label>
-				<div className='col-sm-10'>
-					<input type='text' className='form-control' id='username' name='username' />
+		<div className='container'>
+			<form onSubmit={handleSubmitLogin}>
+				<div className='row mb-3'>
+					<label htmlFor='username' className='col-sm-2 col-form-label'>Username</label>
+					<div className='col-sm-10'>
+						<input type='text' className='form-control' id='username' name='username' />
+					</div>
 				</div>
-			</div>
-			<div className='row mb-3'>
-				<label htmlFor='password' className='col-sm-2 col-form-label'>Password</label>
-				<div className='col-sm-10'>
-					<input type='password' className='form-control' id='password' />
+				<div className='row mb-3'>
+					<label htmlFor='password' className='col-sm-2 col-form-label'>Password</label>
+					<div className='col-sm-10'>
+						<input type='password' className='form-control' id='password' />
+					</div>
 				</div>
-			</div>
-			{loginError ?
-				<div className='row'>
-					<p className='text-danger'>Login error</p>
-				</div>
-				: <></>
-			}
-			<button type='submit' className='btn btn-primary'>Submit</button>
-		</form>
+				{loginError ?
+					<div className='row'>
+						<p className='text-danger'>Login error</p>
+					</div>
+					: <></>
+				}
+				<button type='submit' className='btn btn-primary'>Submit</button>
+			</form>
+		</div>
     );
 };
 
